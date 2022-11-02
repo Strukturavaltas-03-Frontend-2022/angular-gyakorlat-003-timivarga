@@ -29,7 +29,7 @@
 
 <div class="container">
   <!--
-    FELADAT!
+    FELADAT! 12
     1. Szúrd be ide az app-user-list komponenst.
     2. Állítsd be property binding-gal a users változóját,
       az értéke a userList legyen.
@@ -37,6 +37,9 @@
       az értéke az onDeleteUser metódus legyen, és ennek a
       metódusnak add át az $event paramétert.
     -->
+    <app-user-list (delUser)="onDeleteUser($event)" [users]="userList">
+
+    </app-user-list>
 
 
 

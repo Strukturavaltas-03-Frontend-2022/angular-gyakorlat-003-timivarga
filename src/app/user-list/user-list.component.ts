@@ -9,12 +9,14 @@ import { User } from '../model/user';
 export class UserListComponent implements OnInit {
 
   /**
-   * FELADAT!
+   * FELADAT! 5
    * Hozd létre az alábbi Input tulajdonságot.
    * @var users {User[]} - Input tulajdonság
    * @default []
    */
-  
+
+  @Input() users: User[] = [];
+
   @Output() delUser: EventEmitter<User> = new EventEmitter();
   currentUser: User = new User();
 
@@ -24,17 +26,20 @@ export class UserListComponent implements OnInit {
   }
 
   /**
-   * FELADAT!
+   * FELADAT! 6
    * Az eye gombra kattintás esetén lefutó metódus.
    * Neve: onSelectUser
    * Működése: a this.currentUser értékét beállítja a kapott változóra.
    * @param user {User} - egy felhasználó
    * @returns {void}
    */
-  
+  onSelectUser(user:User): void{
+    this.currentUser = user;
+  }
+
 
   /**
-   * FELADAT!
+   * FELADAT! 7
    * Az app-user-detail delUser eseményére lefutó metódus.
    * Neve: onDeleteUser
    * Működése:
@@ -43,6 +48,11 @@ export class UserListComponent implements OnInit {
    * @param user {User} - egy felhasználó
    * @returns {void}
    */
-  
+
+  onDeleteUser (user:User): void {
+    this.delUser.emit(user);
+    this.currentUser = new User();
+  }
+
 
 }
