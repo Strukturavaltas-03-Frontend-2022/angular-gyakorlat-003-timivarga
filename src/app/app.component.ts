@@ -15,10 +15,10 @@ export class AppComponent {
 
   constructor(
     private userService: UserService,
-  ) {}
+  ) { }
 
   /**
-   * FELADAT! 11
+   * FELADAT!
    * Az app-user-list delUser eseményére lefutó metódus.
    * Neve: onDeleteUser
    * Működése:
@@ -26,8 +26,8 @@ export class AppComponent {
    * @param user {User} - egy felhasználó
    * @returns {void}
    */
-   onDeleteUser(user:User):void {
-    return this.userService.removeUser(user);
-  }
+    onDeleteUser(user: User): void {
+      this.userService.removeUser(user);
+    }
 
 }

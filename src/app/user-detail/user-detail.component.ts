@@ -9,13 +9,13 @@ import { User } from '../model/user';
 export class UserDetailComponent implements OnInit {
 
   /**
-   * FELADAT! 1
+   * FELADAT!
    * Hozd létre az alábbi Input tulajdonságot.
    * @var user {User} - Input tulajdonság
    * @default új User
    */
 
-  @Input() user : User = new User;
+  @Input() user: User = new User();
 
   @Output() delUser: EventEmitter<User> = new EventEmitter();
 
@@ -25,7 +25,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   /**
-   * FELADAT! 2
+   * FELADAT!
    * A törlés gombra kattintás esetén lefutó metódus.
    * Neve: onDelete
    * Működése: a this.delUser.emit metódust meghívja a kapott user-rel.
@@ -33,9 +33,8 @@ export class UserDetailComponent implements OnInit {
    * @returns {void}
    */
 
-  onDelete(user: User){
-    return this.delUser.emit(user)
+  onDelete(user: User): void {
+    return this.delUser.emit(user);
   }
-
 
 }
